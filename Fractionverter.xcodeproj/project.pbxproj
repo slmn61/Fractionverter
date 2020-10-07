@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9600FA2E252D6B2500D1ED55 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9600FA2D252D6B2500D1ED55 /* Cell.xib */; };
+		9600FA33252D6C0400D1ED55 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600FA32252D6C0400D1ED55 /* Cell.swift */; };
+		9600FA38252D6E8F00D1ED55 /* FractionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600FA37252D6E8F00D1ED55 /* FractionList.swift */; };
 		96183F6E252C108000C163E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F6D252C108000C163E7 /* AppDelegate.swift */; };
 		96183F70252C108000C163E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F6F252C108000C163E7 /* SceneDelegate.swift */; };
 		96183F72252C108000C163E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F71252C108000C163E7 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9600FA2D252D6B2500D1ED55 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		9600FA32252D6C0400D1ED55 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		9600FA37252D6E8F00D1ED55 /* FractionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionList.swift; sourceTree = "<group>"; };
 		96183F6A252C108000C163E7 /* Fractionverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fractionverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96183F6D252C108000C163E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96183F6F252C108000C163E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 				96183F6D252C108000C163E7 /* AppDelegate.swift */,
 				96183F6F252C108000C163E7 /* SceneDelegate.swift */,
 				96183F71252C108000C163E7 /* ViewController.swift */,
+				9600FA37252D6E8F00D1ED55 /* FractionList.swift */,
+				9600FA2D252D6B2500D1ED55 /* Cell.xib */,
+				9600FA32252D6C0400D1ED55 /* Cell.swift */,
 				96183F73252C108000C163E7 /* Main.storyboard */,
 				96183F79252C108200C163E7 /* Assets.xcassets */,
 				96183F7B252C108200C163E7 /* LaunchScreen.storyboard */,
@@ -235,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96183F7D252C108200C163E7 /* LaunchScreen.storyboard in Resources */,
+				9600FA2E252D6B2500D1ED55 /* Cell.xib in Resources */,
 				96183F7A252C108200C163E7 /* Assets.xcassets in Resources */,
 				96183F75252C108000C163E7 /* Main.storyboard in Resources */,
 			);
@@ -262,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				96183F72252C108000C163E7 /* ViewController.swift in Sources */,
+				9600FA33252D6C0400D1ED55 /* Cell.swift in Sources */,
 				96183F78252C108000C163E7 /* Fractionverter.xcdatamodeld in Sources */,
+				9600FA38252D6E8F00D1ED55 /* FractionList.swift in Sources */,
 				96183F6E252C108000C163E7 /* AppDelegate.swift in Sources */,
 				96183F70252C108000C163E7 /* SceneDelegate.swift in Sources */,
 			);
