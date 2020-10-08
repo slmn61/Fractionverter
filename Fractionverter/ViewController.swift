@@ -38,7 +38,11 @@ class ViewController: UIViewController, UITableViewDataSource {
                     //what will happen once the user clicks the Add Item button on our UIAlert
                     
             let newFraction = textField.text
+            print("the entered fraction \(newFraction ?? "0")")
+            print("firts \(Double(String((newFraction?.first)!))!)")
+            print("second \(Double(String((newFraction?.last)!))!)")
             let newDecimal = Double(String((newFraction?.first)!))! / Double(String((newFraction?.last)!))!
+            print("the calculated Decimal \(newDecimal)")
             
             let fraction: FractionList = FractionList(fr: newFraction!, dc: newDecimal)
             
@@ -52,7 +56,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         
         alert.addAction(action)
-                
         present(alert, animated: true, completion: nil)
     }
     
