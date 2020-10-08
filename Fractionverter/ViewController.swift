@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     var fractionList: [FractionList] = [FractionList(fr: "1/4", dc: 0.250),
                                         FractionList(fr: "1/2", dc: 0.500),
                                         FractionList(fr: "3/4", dc: 0.750),
-                                        FractionList(fr: "1", dc: 1.000)]
+                                        FractionList(fr: "1/1", dc: 1.000)]
     
     
     //var fractionList: [[String: Double]] = [["1/4": 0.250], ["1/2": 0.500], ["3/4": 0.750], ["1": 1.000]]
@@ -29,6 +29,31 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     @IBAction func addNewFraction(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
+                    //what will happen once the user clicks the Add Item button on our UIAlert
+                    
+            let newFraction = textField.text
+            let newDecimal = Double(String((newFraction?.first)!))! / Double(String((newFraction?.last)!))!
+            
+            let fraction: FractionList = FractionList(fr: newFraction!, dc: newDecimal)
+            
+            self.fractionList.append(fraction)
+            self.tableView.reloadData()
+            
+        }
+        alert.addTextField { (alertTextField) in
+                    alertTextField.placeholder = "Create new item"
+                    textField = alertTextField
+        }
+        
+        alert.addAction(action)
+                
+        present(alert, animated: true, completion: nil)
     }
     
     

@@ -15,25 +15,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="587" height="133"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fraction" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVd-cZ-fqm">
-                        <rect key="frame" x="50" y="48.5" width="105" height="36"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decimal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-yx-OsS">
-                        <rect key="frame" x="432" y="48.5" width="105" height="36"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="QKV-i9-B8n">
+                        <rect key="frame" x="50" y="48.5" width="487" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fraction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVd-cZ-fqm">
+                                <rect key="frame" x="127" y="0.0" width="105" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decimal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-yx-OsS">
+                                <rect key="frame" x="382" y="0.0" width="105" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="CVd-cZ-fqm" firstAttribute="leading" secondItem="QKV-i9-B8n" secondAttribute="leading" constant="35" id="1WJ-kF-XUV"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tCJ-yx-OsS" firstAttribute="centerY" secondItem="2oX-h1-v9t" secondAttribute="centerY" id="RUd-4Y-XTv"/>
-                    <constraint firstItem="tCJ-yx-OsS" firstAttribute="leading" secondItem="CVd-cZ-fqm" secondAttribute="trailing" constant="277" id="StI-uZ-7hO"/>
-                    <constraint firstItem="CVd-cZ-fqm" firstAttribute="leading" secondItem="2oX-h1-v9t" secondAttribute="leading" constant="50" id="Yfd-d2-pLK"/>
-                    <constraint firstItem="CVd-cZ-fqm" firstAttribute="leading" secondItem="2oX-h1-v9t" secondAttribute="leading" constant="50" id="tF2-ay-Wni"/>
-                    <constraint firstItem="CVd-cZ-fqm" firstAttribute="baseline" secondItem="tCJ-yx-OsS" secondAttribute="baseline" id="ta1-gK-t5z"/>
+                    <constraint firstItem="QKV-i9-B8n" firstAttribute="leading" secondItem="2oX-h1-v9t" secondAttribute="leading" constant="50" id="D5T-jR-PhP"/>
+                    <constraint firstItem="QKV-i9-B8n" firstAttribute="centerY" secondItem="2oX-h1-v9t" secondAttribute="centerY" id="O2l-7f-evu"/>
+                    <constraint firstItem="QKV-i9-B8n" firstAttribute="centerX" secondItem="2oX-h1-v9t" secondAttribute="centerX" id="bmy-t9-rNi"/>
+                    <constraint firstAttribute="trailing" secondItem="QKV-i9-B8n" secondAttribute="trailing" constant="50" id="ibD-l0-zb9"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
