@@ -13,10 +13,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var fractionList: [FractionList] = [FractionList(fr: "1/4", dc: 0.250),
-                                        FractionList(fr: "1/2", dc: 0.500),
-                                        FractionList(fr: "3/4", dc: 0.750),
-                                        FractionList(fr: "1/1", dc: 1.000)]
+    var fractionList: [FractionList] = [FractionList(fr: "1/4"),
+                                        FractionList(fr: "1/2"),
+                                        FractionList(fr: "3/4"),
+                                        FractionList(fr: "1/1")]
     
     
     //var fractionList: [[String: Double]] = [["1/4": 0.250], ["1/2": 0.500], ["3/4": 0.750], ["1": 1.000]]
@@ -37,16 +37,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
                     //what will happen once the user clicks the Add Item button on our UIAlert
                     
-            let newFraction = textField.text
-            print("the entered fraction \(newFraction ?? "0")")
-            print("firts \(Double(String((newFraction?.first)!))!)")
-            print("second \(Double(String((newFraction?.last)!))!)")
-            let newDecimal = Double(String((newFraction?.first)!))! / Double(String((newFraction?.last)!))!
-            print("the calculated Decimal \(newDecimal)")
+            let newFraction = textField.text!
+            let fr = FractionList(fr: newFraction)
             
-            let fraction: FractionList = FractionList(fr: newFraction!, dc: newDecimal)
             
-            self.fractionList.append(fraction)
+            
+            self.fractionList.append(fr)
+                
             self.tableView.reloadData()
             
         }
@@ -68,7 +65,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let fraction = fractionList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! Cell
         cell.fraction.text = fraction.fraction
-        cell.decimal.text = String(fraction.decimal)
+        cell.decimal.text = fraction.decimal
         return cell
     }
     

@@ -9,10 +9,23 @@ import Foundation
 
 struct FractionList {
     let fraction: String
-    let decimal: Double
+    let decimal: String
     
-    init(fr fraction: String, dc decimal: Double) {
+    init(fr fraction: String) {
         self.fraction = fraction
-        self.decimal = decimal
+        
+        let index = fraction.firstIndex(of: "/") ?? fraction.endIndex
+        let last = fraction.index(after: index)
+
+        
+        
+        let up = Double(fraction[..<index]) ?? 1.0
+        let down = Double(fraction[last...]) ?? 2.0
+        
+        let val: Double = up/down
+        
+        self.decimal = String(format: "%.4f", val)
     }
+    
+    
 }
