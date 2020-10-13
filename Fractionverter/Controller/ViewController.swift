@@ -12,10 +12,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-   
+    
     var fractionList = [Fractions]()
     
     override func viewDidLoad() {
@@ -67,6 +67,27 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let data = fractionList[indexPath.row]
+            
+            context.delete(data)
+            
+            fractionList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+            
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
     
     func saveFractions() {
         do {
@@ -88,7 +109,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         } catch {
             print("Error loading categories \(error)")
         }
-       
+        
         tableView.reloadData()
         
     }
@@ -97,7 +118,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         let index = fraction.firstIndex(of: "/") ?? fraction.endIndex
         let last = fraction.index(after: index)
-
+        
         
         
         let up = Double(fraction[..<index]) ?? 1.0
