@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		529FAE97EACDB52A86614257 /* Pods_Fractionverter_FractionverterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27F2AF00E9303605563AB12 /* Pods_Fractionverter_FractionverterUITests.framework */; };
+		73367CC7A066ABDF5E9E94CC /* Pods_FractionverterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACA1EC9E74AB2BB83D0494A /* Pods_FractionverterTests.framework */; };
 		9600FA2E252D6B2500D1ED55 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9600FA2D252D6B2500D1ED55 /* Cell.xib */; };
 		9600FA33252D6C0400D1ED55 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600FA32252D6C0400D1ED55 /* Cell.swift */; };
 		96183F6E252C108000C163E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F6D252C108000C163E7 /* AppDelegate.swift */; };
@@ -18,6 +20,7 @@
 		96183F7D252C108200C163E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96183F7B252C108200C163E7 /* LaunchScreen.storyboard */; };
 		96183F88252C108200C163E7 /* FractionverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F87252C108200C163E7 /* FractionverterTests.swift */; };
 		96183F93252C108200C163E7 /* FractionverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F92252C108200C163E7 /* FractionverterUITests.swift */; };
+		D9F61BDE625C73EECA5552D9 /* Pods_Fractionverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324918495E81812A405236CB /* Pods_Fractionverter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ACA1EC9E74AB2BB83D0494A /* Pods_FractionverterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractionverterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1288F5585034A2861AAD2782 /* Pods-Fractionverter-FractionverterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fractionverter-FractionverterUITests.release.xcconfig"; path = "Target Support Files/Pods-Fractionverter-FractionverterUITests/Pods-Fractionverter-FractionverterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		324918495E81812A405236CB /* Pods_Fractionverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fractionverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9600FA2D252D6B2500D1ED55 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		9600FA32252D6C0400D1ED55 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		96183F6A252C108000C163E7 /* Fractionverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fractionverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +61,12 @@
 		96183F8E252C108200C163E7 /* FractionverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractionverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96183F92252C108200C163E7 /* FractionverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionverterUITests.swift; sourceTree = "<group>"; };
 		96183F94252C108200C163E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A678E2515F069E7BF83205FB /* Pods-FractionverterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractionverterTests.debug.xcconfig"; path = "Target Support Files/Pods-FractionverterTests/Pods-FractionverterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A784469B16E5D40F027F7BD1 /* Pods-Fractionverter-FractionverterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fractionverter-FractionverterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Fractionverter-FractionverterUITests/Pods-Fractionverter-FractionverterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B954745A9D03BF3F2C770C2B /* Pods-Fractionverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fractionverter.debug.xcconfig"; path = "Target Support Files/Pods-Fractionverter/Pods-Fractionverter.debug.xcconfig"; sourceTree = "<group>"; };
+		C93F7DFCFD625FDE1842FC5F /* Pods-FractionverterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractionverterTests.release.xcconfig"; path = "Target Support Files/Pods-FractionverterTests/Pods-FractionverterTests.release.xcconfig"; sourceTree = "<group>"; };
+		D27F2AF00E9303605563AB12 /* Pods_Fractionverter_FractionverterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fractionverter_FractionverterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3C0304CE759DA45A72A313 /* Pods-Fractionverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fractionverter.release.xcconfig"; path = "Target Support Files/Pods-Fractionverter/Pods-Fractionverter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F61BDE625C73EECA5552D9 /* Pods_Fractionverter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73367CC7A066ABDF5E9E94CC /* Pods_FractionverterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +90,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529FAE97EACDB52A86614257 /* Pods_Fractionverter_FractionverterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15E5CD5217BA6C1600AC01C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				324918495E81812A405236CB /* Pods_Fractionverter.framework */,
+				D27F2AF00E9303605563AB12 /* Pods_Fractionverter_FractionverterUITests.framework */,
+				0ACA1EC9E74AB2BB83D0494A /* Pods_FractionverterTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D0BE2784766388CD4D53024 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B954745A9D03BF3F2C770C2B /* Pods-Fractionverter.debug.xcconfig */,
+				FE3C0304CE759DA45A72A313 /* Pods-Fractionverter.release.xcconfig */,
+				A784469B16E5D40F027F7BD1 /* Pods-Fractionverter-FractionverterUITests.debug.xcconfig */,
+				1288F5585034A2861AAD2782 /* Pods-Fractionverter-FractionverterUITests.release.xcconfig */,
+				A678E2515F069E7BF83205FB /* Pods-FractionverterTests.debug.xcconfig */,
+				C93F7DFCFD625FDE1842FC5F /* Pods-FractionverterTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		96183F61252C108000C163E7 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +128,8 @@
 				96183F86252C108200C163E7 /* FractionverterTests */,
 				96183F91252C108200C163E7 /* FractionverterUITests */,
 				96183F6B252C108000C163E7 /* Products */,
+				2D0BE2784766388CD4D53024 /* Pods */,
+				15E5CD5217BA6C1600AC01C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96183F97252C108200C163E7 /* Build configuration list for PBXNativeTarget "Fractionverter" */;
 			buildPhases = (
+				540F4B240E5A894B6A59FCAD /* [CP] Check Pods Manifest.lock */,
 				96183F66252C108000C163E7 /* Sources */,
 				96183F67252C108000C163E7 /* Frameworks */,
 				96183F68252C108000C163E7 /* Resources */,
+				B17321070A474CE1839994C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96183F9A252C108200C163E7 /* Build configuration list for PBXNativeTarget "FractionverterTests" */;
 			buildPhases = (
+				1CB8ED35727C621ADA771299 /* [CP] Check Pods Manifest.lock */,
 				96183F7F252C108200C163E7 /* Sources */,
 				96183F80252C108200C163E7 /* Frameworks */,
 				96183F81252C108200C163E7 /* Resources */,
@@ -211,9 +255,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96183F9D252C108200C163E7 /* Build configuration list for PBXNativeTarget "FractionverterUITests" */;
 			buildPhases = (
+				217A435DA131860097538B7C /* [CP] Check Pods Manifest.lock */,
 				96183F8A252C108200C163E7 /* Sources */,
 				96183F8B252C108200C163E7 /* Frameworks */,
 				96183F8C252C108200C163E7 /* Resources */,
+				8C96E4DFF30F6E3FEC09BF97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +340,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1CB8ED35727C621ADA771299 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FractionverterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		217A435DA131860097538B7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fractionverter-FractionverterUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		540F4B240E5A894B6A59FCAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fractionverter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C96E4DFF30F6E3FEC09BF97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fractionverter-FractionverterUITests/Pods-Fractionverter-FractionverterUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fractionverter-FractionverterUITests/Pods-Fractionverter-FractionverterUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fractionverter-FractionverterUITests/Pods-Fractionverter-FractionverterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B17321070A474CE1839994C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fractionverter/Pods-Fractionverter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fractionverter/Pods-Fractionverter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fractionverter/Pods-Fractionverter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		96183F66252C108000C163E7 /* Sources */ = {
@@ -477,6 +626,7 @@
 		};
 		96183F98252C108200C163E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B954745A9D03BF3F2C770C2B /* Pods-Fractionverter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -496,6 +646,7 @@
 		};
 		96183F99252C108200C163E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3C0304CE759DA45A72A313 /* Pods-Fractionverter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,6 +666,7 @@
 		};
 		96183F9B252C108200C163E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A678E2515F069E7BF83205FB /* Pods-FractionverterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -537,6 +689,7 @@
 		};
 		96183F9C252C108200C163E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C93F7DFCFD625FDE1842FC5F /* Pods-FractionverterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -559,6 +712,7 @@
 		};
 		96183F9E252C108200C163E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A784469B16E5D40F027F7BD1 /* Pods-Fractionverter-FractionverterUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -579,6 +733,7 @@
 		};
 		96183F9F252C108200C163E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1288F5585034A2861AAD2782 /* Pods-Fractionverter-FractionverterUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
