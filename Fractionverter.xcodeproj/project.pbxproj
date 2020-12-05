@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		529FAE97EACDB52A86614257 /* Pods_Fractionverter_FractionverterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27F2AF00E9303605563AB12 /* Pods_Fractionverter_FractionverterUITests.framework */; };
 		73367CC7A066ABDF5E9E94CC /* Pods_FractionverterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACA1EC9E74AB2BB83D0494A /* Pods_FractionverterTests.framework */; };
-		9600FA2E252D6B2500D1ED55 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9600FA2D252D6B2500D1ED55 /* Cell.xib */; };
-		9600FA33252D6C0400D1ED55 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9600FA32252D6C0400D1ED55 /* Cell.swift */; };
 		96183F6E252C108000C163E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F6D252C108000C163E7 /* AppDelegate.swift */; };
 		96183F70252C108000C163E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F6F252C108000C163E7 /* SceneDelegate.swift */; };
 		96183F72252C108000C163E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96183F71252C108000C163E7 /* ViewController.swift */; };
@@ -44,8 +42,6 @@
 		0ACA1EC9E74AB2BB83D0494A /* Pods_FractionverterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractionverterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1288F5585034A2861AAD2782 /* Pods-Fractionverter-FractionverterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fractionverter-FractionverterUITests.release.xcconfig"; path = "Target Support Files/Pods-Fractionverter-FractionverterUITests/Pods-Fractionverter-FractionverterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		324918495E81812A405236CB /* Pods_Fractionverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fractionverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9600FA2D252D6B2500D1ED55 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
-		9600FA32252D6C0400D1ED55 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		96183F6A252C108000C163E7 /* Fractionverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fractionverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96183F6D252C108000C163E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96183F6F252C108000C163E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,7 +113,6 @@
 				A678E2515F069E7BF83205FB /* Pods-FractionverterTests.debug.xcconfig */,
 				C93F7DFCFD625FDE1842FC5F /* Pods-FractionverterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -178,7 +173,6 @@
 		96FEEAD72533DDEA00ACE936 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9600FA32252D6C0400D1ED55 /* Cell.swift */,
 				96183F71252C108000C163E7 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -195,7 +189,6 @@
 		96FEEADC2533DE2A00ACE936 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9600FA2D252D6B2500D1ED55 /* Cell.xib */,
 				96183F73252C108000C163E7 /* Main.storyboard */,
 			);
 			path = View;
@@ -319,7 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96183F7D252C108200C163E7 /* LaunchScreen.storyboard in Resources */,
-				9600FA2E252D6B2500D1ED55 /* Cell.xib in Resources */,
 				96183F7A252C108200C163E7 /* Assets.xcassets in Resources */,
 				96183F75252C108000C163E7 /* Main.storyboard in Resources */,
 			);
@@ -450,7 +442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96183F72252C108000C163E7 /* ViewController.swift in Sources */,
-				9600FA33252D6C0400D1ED55 /* Cell.swift in Sources */,
 				96183F78252C108000C163E7 /* Fractionverter.xcdatamodeld in Sources */,
 				96183F6E252C108000C163E7 /* AppDelegate.swift in Sources */,
 				96183F70252C108000C163E7 /* SceneDelegate.swift in Sources */,

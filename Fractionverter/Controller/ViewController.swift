@@ -7,11 +7,9 @@
 
 import UIKit
 import CoreData
+import SwipeCellKit
 
-class ViewController: UIViewController, UITableViewDataSource {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+class ViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -20,78 +18,29 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
         
-        tableView.register(UINib(nibName: "Cell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         loadFractions()
+        
+        tableView.rowHeight = 80.0
+        
     }
     
-    @IBAction func addNewFraction(_ sender: UIBarButtonItem) {
-        
-        var textField = UITextField()
-        
-        let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
-            //what will happen once the user clicks the Add Item button on our UIAlert
-            
-            //let newFraction = textField.text!
-            //let fr = FractionList(fr: newFraction)
-            let fr = Fractions(context: self.context)
-            fr.fraction = textField.text!
-            
-            self.fractionList.append(fr)
-            
-            self.saveFractions()
-            
-        }
-        alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Create new item"
-            textField = alertTextField
-        }
-        
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fractionList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let fr = fractionList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! Cell
-        cell.fraction.text = fr.fraction
-        cell.decimal.text = converter(fr: fr.fraction!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FrictionCell", for: indexPath) as! SwipeTableViewCell
+        
+        cell.delegate = self
+        
+        cell.textLabel?.text = fr.fraction
         return cell
     }
-    
-    
-    
-    
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//
-//            let data = fractionList[indexPath.row]
-//
-//            context.delete(data)
-//
-//            fractionList.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//
-//
-//
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//        }
-//    }
-    
-    
+
+
     func saveFractions() {
         do {
             try context.save()
@@ -101,6 +50,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         tableView.reloadData()
         
+    }
+    
+    func deleteFtactions(fr: NSManagedObject){
+        
+        context.delete(fr)
+        
+        //tableView.reloadData()
     }
     
     func loadFractions() {
@@ -132,6 +88,59 @@ class ViewController: UIViewController, UITableViewDataSource {
         let decimal = String(format: "%.4f", val)
         return decimal
     }
+    
+    
+    @IBAction func addNewFraction(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
+            
+            let fr = Fractions(context: self.context)
+            fr.fraction = textField.text!
+            
+            self.fractionList.append(fr)
+            
+            self.saveFractions()
+            
+        }
+        alert.addAction(action)
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Create new item"
+            textField = alertTextField
+        }
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+//MARK: - SwipeCellDelegate methods
+extension ViewController: SwipeTableViewCellDelegate{
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            
+            let fr = self.fractionList[indexPath.row]
+            self.fractionList.remove(at: indexPath.row)
+            self.deleteFtactions(fr: fr)
+        }
+
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete-icon")
+
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        return options
+    }
+    
     
 }
 
