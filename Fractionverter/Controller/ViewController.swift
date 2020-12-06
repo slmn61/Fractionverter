@@ -8,8 +8,10 @@
 import UIKit
 import CoreData
 import SwipeCellKit
+import ChameleonFramework
 
 class ViewController: UITableViewController {
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -20,6 +22,8 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         loadFractions()
+        
+        tableView.separatorStyle = .none
         
         tableView.rowHeight = 80.0
         
@@ -36,7 +40,12 @@ class ViewController: UITableViewController {
         
         cell.delegate = self
         
-        cell.textLabel?.text = fr.fraction
+        
+        //cell.textLabel?.text = fr.fraction
+        //cell.textLabel?.text = fr.decimal
+        
+        cell.backgroundColor = UIColor(hexString: fr.color ?? "#FFFFFF")
+        
         return cell
     }
 
@@ -99,11 +108,16 @@ class ViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
             
             let fr = Fractions(context: self.context)
-            fr.fraction = textField.text!
+            if let frText = textField.text{
+                fr.fraction = frText
+                fr.decimal = self.converter(fr: frText)
+                fr.color = UIColor.randomFlat().hexValue()
+                self.fractionList.append(fr)
+                
+                self.saveFractions()
+            }
             
-            self.fractionList.append(fr)
             
-            self.saveFractions()
             
         }
         alert.addAction(action)
@@ -140,6 +154,7 @@ extension ViewController: SwipeTableViewCellDelegate{
         options.expansionStyle = .destructive
         return options
     }
+    
     
     
 }

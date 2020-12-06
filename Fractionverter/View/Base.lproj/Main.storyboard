@@ -22,6 +22,29 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z13-y5-WRw" id="Iig-OY-KUN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLc-mT-6aV">
+                                            <rect key="frame" x="40" y="11" width="63" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decimal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoi-fP-dUX">
+                                            <rect key="frame" x="332" y="11" width="62" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="top" secondItem="Iig-OY-KUN" secondAttribute="topMargin" id="0vd-4E-ac4"/>
+                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="leading" secondItem="Iig-OY-KUN" secondAttribute="leadingMargin" constant="20" id="JAi-EV-dXG"/>
+                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="centerY" secondItem="Iig-OY-KUN" secondAttribute="centerY" id="Lto-mu-ZjF"/>
+                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="firstBaseline" secondItem="zoi-fP-dUX" secondAttribute="firstBaseline" id="MOM-eW-kDq"/>
+                                        <constraint firstAttribute="trailing" secondItem="zoi-fP-dUX" secondAttribute="trailing" constant="20" id="Tjm-IP-r7g"/>
+                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="baseline" secondItem="zoi-fP-dUX" secondAttribute="baseline" id="n66-BB-sZt"/>
+                                        <constraint firstItem="zoi-fP-dUX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eLc-mT-6aV" secondAttribute="trailing" constant="8" symbolic="YES" id="yBe-Xi-l4Q"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
