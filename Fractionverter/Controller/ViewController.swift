@@ -12,14 +12,17 @@ import ChameleonFramework
 
 class ViewController: UITableViewController {
     
-    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var tempColor = FlatBlueDark()
     
     
     var fractionList = [Fractions]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = UIColor(hexString: "5A5A5A")
+
         
         loadFractions()
         
@@ -40,9 +43,10 @@ class ViewController: UITableViewController {
         
         cell.delegate = self
         
+        let completeLine: String = fr.fraction! + "         " + fr.decimal!
         
-        //cell.textLabel?.text = fr.fraction
-        //cell.textLabel?.text = fr.decimal
+        
+        cell.textLabel?.text = completeLine
         
         cell.backgroundColor = UIColor(hexString: fr.color ?? "#FFFFFF")
         
@@ -103,7 +107,9 @@ class ViewController: UITableViewController {
         
         var textField = UITextField()
         
+        
         let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert)
+        
         
         let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
             
@@ -111,14 +117,12 @@ class ViewController: UITableViewController {
             if let frText = textField.text{
                 fr.fraction = frText
                 fr.decimal = self.converter(fr: frText)
-                fr.color = UIColor.randomFlat().hexValue()
+                fr.color = self.tempColor.hexValue()
+                self.tempColor = self.tempColor.lighten(byPercentage: CGFloat(0.05))!
                 self.fractionList.append(fr)
                 
                 self.saveFractions()
             }
-            
-            
-            
         }
         alert.addAction(action)
         alert.addTextField { (alertTextField) in
@@ -127,7 +131,11 @@ class ViewController: UITableViewController {
         }
         
         present(alert, animated: true, completion: nil)
+        
+        
     }
+    
+   
     
 }
 

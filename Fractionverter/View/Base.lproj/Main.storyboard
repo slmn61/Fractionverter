@@ -7,14 +7,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Fractionverter-->
         <scene sceneID="MZm-oS-XJU">
             <objects>
-                <tableViewController id="NyB-if-k7Z" customClass="ViewController" customModule="Fractionverter" sceneMemberID="viewController">
+                <tableViewController title="Fractionverter" id="NyB-if-k7Z" customClass="ViewController" customModule="Fractionverter" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VPZ-QK-sNz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" red="0.3529411764705882" green="0.3529411764705882" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FrictionCell" id="z13-y5-WRw" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -22,29 +23,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z13-y5-WRw" id="Iig-OY-KUN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLc-mT-6aV">
-                                            <rect key="frame" x="40" y="11" width="63" height="21.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decimal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoi-fP-dUX">
-                                            <rect key="frame" x="332" y="11" width="62" height="21.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="top" secondItem="Iig-OY-KUN" secondAttribute="topMargin" id="0vd-4E-ac4"/>
-                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="leading" secondItem="Iig-OY-KUN" secondAttribute="leadingMargin" constant="20" id="JAi-EV-dXG"/>
-                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="centerY" secondItem="Iig-OY-KUN" secondAttribute="centerY" id="Lto-mu-ZjF"/>
-                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="firstBaseline" secondItem="zoi-fP-dUX" secondAttribute="firstBaseline" id="MOM-eW-kDq"/>
-                                        <constraint firstAttribute="trailing" secondItem="zoi-fP-dUX" secondAttribute="trailing" constant="20" id="Tjm-IP-r7g"/>
-                                        <constraint firstItem="eLc-mT-6aV" firstAttribute="baseline" secondItem="zoi-fP-dUX" secondAttribute="baseline" id="n66-BB-sZt"/>
-                                        <constraint firstItem="zoi-fP-dUX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eLc-mT-6aV" secondAttribute="trailing" constant="8" symbolic="YES" id="yBe-Xi-l4Q"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -53,7 +31,7 @@
                             <outlet property="delegate" destination="NyB-if-k7Z" id="UwQ-ag-r7w"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wFa-az-6AY">
+                    <navigationItem key="navigationItem" title="FRACTIONVERTER" id="wFa-az-6AY">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="40B-oe-4CS">
                             <connections>
                                 <action selector="addNewFraction:" destination="NyB-if-k7Z" id="HMl-We-Kn3"/>
@@ -70,9 +48,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wId-2a-Yb7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T2o-DU-HLe">
+                    <navigationBar key="navigationBar" alpha="0.5" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T2o-DU-HLe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.49193817379999999" green="0.080158405010000003" blue="0.082420475780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
