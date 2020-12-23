@@ -107,8 +107,8 @@ class ViewController: UITableViewController {
         
         var textField = UITextField()
         
-        
-        let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert
+    )
         
         
         let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
@@ -123,6 +123,7 @@ class ViewController: UITableViewController {
                 
                 self.saveFractions()
             }
+            
         }
         alert.addAction(action)
         alert.addTextField { (alertTextField) in
