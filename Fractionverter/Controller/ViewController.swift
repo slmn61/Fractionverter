@@ -12,6 +12,10 @@ import ChameleonFramework
 
 class ViewController: UITableViewController {
     
+    
+    let divideLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+   
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var tempColor = FlatBlueDark()
@@ -23,7 +27,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundColor = UIColor(hexString: "5A5A5A")
 
-        
+        divideLabel.text = "/"
         loadFractions()
         
         tableView.separatorStyle = .none
@@ -42,6 +46,7 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FrictionCell", for: indexPath) as! SwipeTableViewCell
         
         cell.delegate = self
+        
         
         let completeLine: String = fr.fraction! + "         " + fr.decimal!
         
@@ -86,19 +91,14 @@ class ViewController: UITableViewController {
         
     }
     
-    func converter (fr fraction: String) -> String{
+    func converter (nume: String, denome: String) -> String{
+        let up = Double(nume) ?? 0.0
+        let down = Double(denome) ?? 1.0
         
-        let index = fraction.firstIndex(of: "/") ?? fraction.endIndex
-        let last = fraction.index(after: index)
-        
-        
-        
-        let up = Double(fraction[..<index]) ?? 1.0
-        let down = Double(fraction[last...]) ?? 2.0
-        
-        let val: Double = up/down
-        
+        let val = up/down
+
         let decimal = String(format: "%.4f", val)
+        
         return decimal
     }
     
@@ -119,6 +119,8 @@ class ViewController: UITableViewController {
                 case .destructive:
                     print("destructive")
 
+                @unknown default:
+                    fatalError()
                 }}))
             self.present(alert, animated: true, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -130,23 +132,34 @@ class ViewController: UITableViewController {
     
     @IBAction func addNewFraction(_ sender: UIBarButtonItem) {
         
-        var textField = UITextField()
+        var numeratorTextField = UITextField()
+        numeratorTextField.keyboardType = .numberPad
         
-        let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert
-    )
+        var denominatorTextField = UITextField()
+        denominatorTextField.keyboardType = .numberPad
+        
+        let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert)
         
         
         let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
+           
             
             let fr = Fractions(context: self.context)
             
-            guard let text = textField.text, !text.isEmpty else {
+            guard let text = numeratorTextField.text, !text.isEmpty else {
                 self.notifyUser()
                 return
             }
-            if let frText = textField.text{
-                    fr.fraction = frText
-                    fr.decimal = self.converter(fr: frText)
+            
+            guard let text2 = denominatorTextField.text, !text2.isEmpty else {
+                self.notifyUser()
+                return
+            }
+            
+            
+            if let frNumeratorText = numeratorTextField.text, let frDenominatorText = denominatorTextField.text {
+                    fr.fraction = frNumeratorText + "/" + frDenominatorText
+                    fr.decimal = self.converter(nume: frNumeratorText, denome: frDenominatorText)
                     fr.color = self.tempColor.hexValue()
                     self.tempColor = self.tempColor.lighten(byPercentage: CGFloat(0.05))!
                     self.fractionList.append(fr)
@@ -155,10 +168,20 @@ class ViewController: UITableViewController {
             }
         }
         alert.addAction(action)
+        
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Create new item"
-            textField = alertTextField
+            alertTextField.placeholder = "Add Numerator"
+            alertTextField.keyboardType = .numberPad
+            numeratorTextField = alertTextField
         }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Add Denominator"
+            alertTextField.keyboardType = .numberPad
+            denominatorTextField = alertTextField
+        }
+        
+        
         
         present(alert, animated: true, completion: nil)
         
