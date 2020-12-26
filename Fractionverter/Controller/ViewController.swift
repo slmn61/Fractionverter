@@ -103,6 +103,31 @@ class ViewController: UITableViewController {
     }
     
     
+    var alert: UIAlertController!
+
+    func notifyUser() -> Void
+    {
+        let alert = UIAlertController(title: "MESSAGE", message: "Please Add Fraction!!!", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+
+                case .cancel:
+                    print("cancel")
+
+                case .destructive:
+                    print("destructive")
+
+                }}))
+            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+
+                alert.dismiss(animated: true, completion: nil)
+            }
+    }
+    
+    
     @IBAction func addNewFraction(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
@@ -114,16 +139,20 @@ class ViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
             
             let fr = Fractions(context: self.context)
-            if let frText = textField.text{
-                fr.fraction = frText
-                fr.decimal = self.converter(fr: frText)
-                fr.color = self.tempColor.hexValue()
-                self.tempColor = self.tempColor.lighten(byPercentage: CGFloat(0.05))!
-                self.fractionList.append(fr)
-                
-                self.saveFractions()
-            }
             
+            guard let text = textField.text, !text.isEmpty else {
+                self.notifyUser()
+                return
+            }
+            if let frText = textField.text{
+                    fr.fraction = frText
+                    fr.decimal = self.converter(fr: frText)
+                    fr.color = self.tempColor.hexValue()
+                    self.tempColor = self.tempColor.lighten(byPercentage: CGFloat(0.05))!
+                    self.fractionList.append(fr)
+                    
+                    self.saveFractions()
+            }
         }
         alert.addAction(action)
         alert.addTextField { (alertTextField) in
