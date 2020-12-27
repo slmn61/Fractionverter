@@ -65,11 +65,11 @@ class ViewController: UITableViewController {
         stkView.addSubview(l2)
         
 //        let bottom = NSLayoutConstraint(item: stkView, attribute: .bottom, relatedBy: .equal, toItem: cell, attribute: .bottom, multiplier: 1.0, constant: 5)
-//        
+//
 //        let top = NSLayoutConstraint(item: stkView, attribute: .top, relatedBy: .equal, toItem: cell, attribute: .top, multiplier: 1.0, constant: 5)
-//        
+//
 //        let left = NSLayoutConstraint(item: stkView, attribute: .left, relatedBy: .equal, toItem: cell, attribute: .left, multiplier: 1.0, constant: 5)
-//        
+//
 //        let right = NSLayoutConstraint(item: stkView, attribute: .right, relatedBy: .equal, toItem: cell, attribute: .right, multiplier: 1.0, constant: 5)
 
         
