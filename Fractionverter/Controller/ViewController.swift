@@ -48,10 +48,48 @@ class ViewController: UITableViewController {
         cell.delegate = self
         
         
-        let completeLine: String = fr.fraction! + "         " + fr.decimal!
+        
+        let l1 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        l1.text = fr.fraction
+        l1.textAlignment = .center
         
         
-        cell.textLabel?.text = completeLine
+        let l2 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        l2.text = fr.decimal
+        l2.textAlignment = .center
+        
+        
+        let stkView = UIStackView()
+        
+        stkView.addSubview(l1)
+        stkView.addSubview(l2)
+        
+//        let bottom = NSLayoutConstraint(item: stkView, attribute: .bottom, relatedBy: .equal, toItem: cell, attribute: .bottom, multiplier: 1.0, constant: 5)
+//        
+//        let top = NSLayoutConstraint(item: stkView, attribute: .top, relatedBy: .equal, toItem: cell, attribute: .top, multiplier: 1.0, constant: 5)
+//        
+//        let left = NSLayoutConstraint(item: stkView, attribute: .left, relatedBy: .equal, toItem: cell, attribute: .left, multiplier: 1.0, constant: 5)
+//        
+//        let right = NSLayoutConstraint(item: stkView, attribute: .right, relatedBy: .equal, toItem: cell, attribute: .right, multiplier: 1.0, constant: 5)
+
+        
+        stkView.axis = .horizontal
+        
+        
+        stkView.distribution = .fillEqually
+        stkView.alignment = .fill
+        stkView.spacing = 5
+        
+        cell.addSubview(stkView)
+        //cell.addSubview(l2)
+        
+//        stkView.addConstraint(bottom)
+//        stkView.addConstraint(top)
+//        stkView.addConstraint(left)
+//        stkView.addConstraint(right)
+        
+        
+        //cell.textLabel?.text = completeLine
         
         cell.backgroundColor = UIColor(hexString: fr.color ?? "#FFFFFF")
         
