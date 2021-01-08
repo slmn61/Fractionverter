@@ -13,7 +13,7 @@ import ChameleonFramework
 class ViewController: UITableViewController {
     
     
-    let divideLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    let divideLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -47,49 +47,18 @@ class ViewController: UITableViewController {
         
         cell.delegate = self
         
+        let l1 = UILabel(frame: CGRect(x: 10, y: 25, width: 100, height: 21))
+        let l2 = UILabel(frame: CGRect(x: 250, y: 25, width: 100, height: 21))
         
-        
-        let l1 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
         l1.text = fr.fraction
-        l1.textAlignment = .center
-        
-        
-        let l2 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
         l2.text = fr.decimal
+        
+        
+        l1.textAlignment = .center
         l2.textAlignment = .center
         
-        
-        let stkView = UIStackView()
-        
-        stkView.addSubview(l1)
-        stkView.addSubview(l2)
-        
-//        let bottom = NSLayoutConstraint(item: stkView, attribute: .bottom, relatedBy: .equal, toItem: cell, attribute: .bottom, multiplier: 1.0, constant: 5)
-//
-//        let top = NSLayoutConstraint(item: stkView, attribute: .top, relatedBy: .equal, toItem: cell, attribute: .top, multiplier: 1.0, constant: 5)
-//
-//        let left = NSLayoutConstraint(item: stkView, attribute: .left, relatedBy: .equal, toItem: cell, attribute: .left, multiplier: 1.0, constant: 5)
-//
-//        let right = NSLayoutConstraint(item: stkView, attribute: .right, relatedBy: .equal, toItem: cell, attribute: .right, multiplier: 1.0, constant: 5)
-
-        
-        stkView.axis = .horizontal
-        
-        
-        stkView.distribution = .fillEqually
-        stkView.alignment = .fill
-        stkView.spacing = 5
-        
-        cell.addSubview(stkView)
-        //cell.addSubview(l2)
-        
-//        stkView.addConstraint(bottom)
-//        stkView.addConstraint(top)
-//        stkView.addConstraint(left)
-//        stkView.addConstraint(right)
-        
-        
-        //cell.textLabel?.text = completeLine
+        cell.addSubview(l1)
+        cell.addSubview(l2)
         
         cell.backgroundColor = UIColor(hexString: fr.color ?? "#FFFFFF")
         
@@ -193,7 +162,6 @@ class ViewController: UITableViewController {
                 self.notifyUser()
                 return
             }
-            
             
             if let frNumeratorText = numeratorTextField.text, let frDenominatorText = denominatorTextField.text {
                     fr.fraction = frNumeratorText + "/" + frDenominatorText
