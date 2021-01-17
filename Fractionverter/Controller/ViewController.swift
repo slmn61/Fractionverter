@@ -17,10 +17,7 @@ class ViewController: UITableViewController {
    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var tempColor = FlatBlueDark()
-    
-    
+
     var fractionList = [Fractions]()
     
     override func viewDidLoad() {
@@ -70,18 +67,11 @@ class ViewController: UITableViewController {
         do {
             try context.save()
         } catch {
-            print("Error saving category \(error)")
+            print("Error saving fractions \(error)")
         }
         
         tableView.reloadData()
         
-    }
-    
-    func deleteFtactions(fr: NSManagedObject){
-        
-        context.delete(fr)
-        
-        //tableView.reloadData()
     }
     
     func loadFractions() {
@@ -146,11 +136,8 @@ class ViewController: UITableViewController {
         denominatorTextField.keyboardType = .numberPad
         
         let alert = UIAlertController(title: "Add New Fraction Item", message: "", preferredStyle: .alert)
-        
-        
         let action = UIAlertAction(title: "Add Fraction", style: .default) { (action) in
            
-            
             let fr = Fractions(context: self.context)
             
             guard let text = numeratorTextField.text, !text.isEmpty else {
@@ -166,36 +153,29 @@ class ViewController: UITableViewController {
             if let frNumeratorText = numeratorTextField.text, let frDenominatorText = denominatorTextField.text {
                     fr.fraction = frNumeratorText + "/" + frDenominatorText
                     fr.decimal = self.converter(nume: frNumeratorText, denome: frDenominatorText)
-                    fr.color = self.tempColor.hexValue()
-                    self.tempColor = self.tempColor.lighten(byPercentage: CGFloat(0.05))!
-                    self.fractionList.append(fr)
-                    
-                    self.saveFractions()
+                    fr.color = RandomFlatColor().hexValue()
             }
+            self.fractionList.append(fr)
+            self.saveFractions()
         }
+        
         alert.addAction(action)
         
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Add Numerator"
             alertTextField.keyboardType = .numberPad
+            alertTextField.delegate = self
             numeratorTextField = alertTextField
         }
         
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Add Denominator"
             alertTextField.keyboardType = .numberPad
+            alertTextField.delegate = self
             denominatorTextField = alertTextField
         }
-        
-        
-        
         present(alert, animated: true, completion: nil)
-        
-        
     }
-    
-   
-    
 }
 
 //MARK: - SwipeCellDelegate methods
@@ -206,11 +186,10 @@ extension ViewController: SwipeTableViewCellDelegate{
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             
             let fr = self.fractionList[indexPath.row]
+            self.context.delete(fr)
             self.fractionList.remove(at: indexPath.row)
-            self.deleteFtactions(fr: fr)
         }
 
-        // customize the action appearance
         deleteAction.image = UIImage(named: "delete-icon")
 
         return [deleteAction]
@@ -226,3 +205,15 @@ extension ViewController: SwipeTableViewCellDelegate{
     
 }
 
+extension ViewController: UITextFieldDelegate{
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            guard let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                    return false
+            }
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            return count <= 2
+        }
+}
