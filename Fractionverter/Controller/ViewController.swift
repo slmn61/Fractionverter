@@ -13,7 +13,7 @@ import ChameleonFramework
 class ViewController: UITableViewController {
     
     
-    let divideLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    //let divideLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -24,7 +24,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundColor = UIColor(hexString: "5A5A5A")
 
-        divideLabel.text = "/"
+        //divideLabel.text = "/"
         loadFractions()
         
         tableView.separatorStyle = .none
@@ -46,6 +46,7 @@ class ViewController: UITableViewController {
         
         let l1 = UILabel(frame: CGRect(x: 10, y: 25, width: 100, height: 21))
         let l2 = UILabel(frame: CGRect(x: 250, y: 25, width: 100, height: 21))
+        
         
         l1.text = fr.fraction
         l2.text = fr.decimal
@@ -70,7 +71,8 @@ class ViewController: UITableViewController {
             print("Error saving fractions \(error)")
         }
         
-        tableView.reloadData()
+        //tableView.reloadData()
+        loadFractions()
         
     }
     
@@ -189,10 +191,11 @@ extension ViewController: SwipeTableViewCellDelegate{
             self.context.delete(fr)
             self.fractionList.remove(at: indexPath.row)
         }
-
+                
         deleteAction.image = UIImage(named: "delete-icon")
 
         return [deleteAction]
+        
     }
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
@@ -200,9 +203,6 @@ extension ViewController: SwipeTableViewCellDelegate{
         options.expansionStyle = .destructive
         return options
     }
-    
-    
-    
 }
 
 extension ViewController: UITextFieldDelegate{
